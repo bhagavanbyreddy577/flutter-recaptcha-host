@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+</head>
+<body>
+<form action="?" method="POST">
+    <div class="g-recaptcha" data-sitekey="6Lfix-MrAAAAANfDZoJBQkEvC-HA7_EA4TU09Btx" data-callback="onSuccess"></div>
+</form>
+<script>
+    function onSuccess(token) {
+      window.flutter_inappwebview.callHandler('recaptchaCallback', token);
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>reCAPTCHA</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript">
+        function onSubmit(token) {
+            // Send the token back to the Flutter app.
+            // 'Recaptcha' is the JavaScript channel name.
+            Recaptcha.postMessage(token);
+        }
+    </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="g-recaptcha" data-sitekey="6LcIeckrAAAAABrrejIoXsmecHfiJPcMe-E8wnmJ" data-callback="onSubmit"></div>
+</body>
+</html>-->
